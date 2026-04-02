@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorezza | Luxury Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:image" content="img/Gracias.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --sorezza-greige: #E5E4E2;
+            --sorezza-dark: #1A1A1A;
+            --sorezza-accent: #8E8E8E;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFD;
+            color: var(--sorezza-dark);
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-greige {
+            background-color: var(--sorezza-greige);
+        }
+
+        .logo-container {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .logo-container {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(26, 26, 26, 0.04);
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #0a2240 0%, #1a1a1a 100%);
+            box-shadow: 0 0 16px 4px #0a2240;
+            opacity: 0;
+            transition: width 0.5s cubic-bezier(0.4, 0.8, 0.2, 1), opacity 0.3s;
+            z-index: 2;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(10, 34, 64, 0.12), 0 1.5px 8px rgba(26, 26, 26, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .card:hover::before {
+            width: 100%;
+            opacity: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border-color: var(--sorezza-greige);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="logo-container bg-black">
+                <!-- Contenedor para el logo cargado -->
+                <img src="logo2.jpg" alt="Sorezza Logo" class="w-full h-full object-cover">
+            </div>
+
+
+
+            <div class="flex items-center space-x-4">
+                <div class="text-[10px] uppercase tracking-widest font-semibold border border-dark px-3 py-1">
+                    VZLA 🇻🇪
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Identidad Visual -->
+    <header class="relative bg-white pt-16 pb-24 px-6 text-center overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+
+            <div class="flex justify-center mb-6 md:mb-8">
+                <div
+                    class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-black flex items-center justify-center p-1 shadow-xl">
+
+                    <img src="./logo2.jpg" alt="Sorezza Emblem" class="w-full h-full object-cover rounded-full">
+
+                </div>
+            </div>
+
+            <h2 class="serif text-2xl md:text-6xl mb-6 tracking-tight">
+                Esencia de lujo a tu alcance
+            </h2>
+
+            <p class="text-gray-500 mb-10 uppercase tracking-[0.4em] text-[10px]">
+                Fragancias de Colección
+            </p>
+
+            <div class="h-[1px] w-20 bg-dark mx-auto mb-10"></div>
+
+            <p class="max-w-lg mx-auto text-sm text-gray-400 leading-relaxed italic">
+                "La elegancia no es hacerse notar, sino ser recordado."
+                Adquiere tu esencia favorita en dos cómodas cuotas.
+            </p>
+
+        </div>
+
+        <!-- Decoración de fondo suave -->
+        <div
+            class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none flex items-center justify-center">
+            <span class="serif text-[20vw] select-none uppercase">SOREZZA</span>
+        </div>
+
+    </header>
+    <!-- Catalog Grid -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 md:mb-16 border-b border-gray-100 pb-6 md:pb-8">
+            <div class="text-center md:text-left mb-6 md:mb-0 w-full md:w-auto">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-400 block mb-2">Catálogo Online</span>
+                <h3 class="serif text-3xl">Nuestra Selección</h3>
+            </div>
+            <div
+                class="flex space-x-6 overflow-x-auto w-full md:w-auto pb-2 justify-start md:justify-end [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                <button onclick="filterItems('all')"
+                    class="text-[12px] md:text-[10px] whitespace-nowrap uppercase tracking-widest border-b-2 border-dark pb-1">Todos</button>
+                <button onclick="filterItems('dama')"
+                    class="text-[12px] md:text-[10px] whitespace-nowrap uppercase tracking-widest text-gray-400 hover:text-dark pb-1">Dama</button>
+                <button onclick="filterItems('unisex')"
+                    class="text-[12px] md:text-[10px] whitespace-nowrap uppercase tracking-widest text-gray-400 hover:text-dark pb-1">Unisex</button>
+                <button onclick="filterItems('caballero')"
+                    class="text-[12px] md:text-[10px] whitespace-nowrap uppercase tracking-widest text-gray-400 hover:text-dark pb-1">Caballero</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-x-8 md:gap-y-16">
+            <!-- Products injected by JS -->
+        </div>
+    </main>
+
+    <!-- Modal de Compra Estilizado -->
+    <div id="purchase-modal"
+        class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[100] px-4 backdrop-blur-sm">
+        <div class="bg-white max-w-md w-[90%] md:w-full p-8 md:p-10 rounded-none relative shadow-2xl">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-gray-300 hover:text-dark text-2xl">&times;</button>
+            <div id="modal-content">
+                <!-- Inyectado por JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black text-white py-20 px-6 mt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <h4 class="serif text-2xl mb-6 tracking-widest uppercase">Sorezza</h4>
+                <p class="text-xs text-gray-500 leading-loose uppercase tracking-widest">
+                    Venezuela <br>
+                    Boutique
+                </p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 mx-auto">
+                    <img src="logo2.jpg" alt="Footer Logo"
+                        class="w-10 h-10 md:w-12 md:h-12 object-cover rounded-full opacity-80 grayscale">
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">© 2026 Sorezza.</p>
+                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mt-2">Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "808 Sexy Men New York", img: "808 SEXY MEN NEW YORK.png", price: 45.00, category: "caballero", tag: "Nuevo" },
+            { id: 2, name: "Ajwad Pink To Pink", img: "AJWAD PINK TO PINK LATTAFA.png", price: 38.50, category: "unisex", tag: "" },
+            { id: 3, name: "Armaf Odyssey Aoud", img: "ARMAF ODYSSEY AOUD.png", price: 42.00, category: "caballero", tag: "" },
+            { id: 4, name: "Asad Bourbon", img: "ASAD BOURBON LATTAFA.png", price: 50.00, category: "caballero", tag: "Premium" },
+            { id: 5, name: "Asad Lattafa", img: "ASAD LATAFFA.png", price: 48.00, category: "caballero", tag: "Best Seller" },
+            { id: 6, name: "Al A' Raaf Rooh", img: "Al A’ RAAF ROOH.png", price: 25.00, category: "dama", tag: "" },
+            { id: 7, name: "Badee Al Oud Amethyst", img: "BADEE AL OUD AMETHYST.png", price: 52.00, category: "unisex", tag: "" },
+            { id: 8, name: "Bakhoor Layali", img: "BAKHOOR LAYALI CONCENTRATE.png", price: 22.00, category: "unisex", tag: "" },
+            { id: 9, name: "Club De Nuit Intense Men", img: "CLUB DE NUIT INTENSE MEN ARMAF.png", price: 35.00, category: "caballero", tag: "" },
+            { id: 10, name: "Diva Blanc Swiss", img: "Diva Blanc Swiss.png", price: 20.00, category: "dama", tag: "" },
+            { id: 11, name: "Diva Red Swiss", img: "Diva Red Swiss.png", price: 21.00, category: "dama", tag: "" },
+            { id: 12, name: "Eclaire", img: "ECLAIRE.png", price: 44.50, category: "dama", tag: "Popular" },
+            { id: 13, name: "Good Sky Girl", img: "Good Sky Girl.png", price: 28.00, category: "dama", tag: "" },
+            { id: 14, name: "Khamrah Qahwa", img: "KHAMRAH QAHWA LATTAFA.png", price: 55.00, category: "unisex", tag: "Exclusivo" },
+            { id: 15, name: "Mayar Natural", img: "LATTAFA MAYAR NATURAL.png", price: 34.00, category: "dama", tag: "" },
+            { id: 16, name: "Yara Moi", img: "LATTAFA YARA MOI.png", price: 39.00, category: "dama", tag: "" },
+            { id: 17, name: "Mayar Cherry Intense", img: "MAYAR CHERRY INTENSE LATTAFA.png", price: 41.00, category: "dama", tag: "" },
+            { id: 18, name: "Secret Of Arabia Heaven", img: "SECRET OF ARABIA HEAVEN.png", price: 30.00, category: "dama", tag: "" },
+            { id: 19, name: "Secret Of Arabia Violet", img: "SECRET OF ARABIA VIOLET.png", price: 31.00, category: "dama", tag: "" },
+            { id: 20, name: "Verato Sport", img: "Verato Sport.png", price: 24.00, category: "caballero", tag: "" },
+            { id: 21, name: "Verato White Musk", img: "Verato White Musk.png", price: 26.00, category: "dama", tag: "" },
+            { id: 22, name: "Yara Elixir", img: "YARA ELIXIR.png", price: 51.00, category: "dama", tag: "" },
+            { id: 23, name: "Yara Lattafa", img: "YARA LATTAFA.png", price: 37.50, category: "dama", tag: "Popular" },
+            { id: 24, name: "Yara Tous", img: "YARA TOUS.png", price: 40.00, category: "dama", tag: "" },
+            { id: 25, name: "You Are My Fire Rouge", img: "YOU ARE MY FIRE ROUGE.png", price: 49.00, category: "unisex", tag: "" },
+            { id: 26, name: "Zuhur Hamrah", img: "ZUHUR HAMRAH.png", price: 27.50, category: "dama", tag: "" }
+        ];
+
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            items.forEach(p => {
+                grid.innerHTML += `
+                    <div class="card p-6 flex flex-col group">
+                        <div class="aspect-[2/3] md:aspect-[3/4] bg-[#F5F5F5] mb-6 flex items-center justify-center relative overflow-hidden rounded-md">
+                            <img src="img/${p.img}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                            ${p.tag ? `<span class="absolute top-0 left-0 bg-black text-white text-[8px] px-3 py-1 uppercase tracking-[0.2em] z-10">${p.tag}</span>` : ''}
+                        </div>
+                        <h4 class="serif text-lg mb-2 tracking-tight">${p.name}</h4>
+                        <div class="flex flex-col border-t border-gray-50 pt-4 mt-auto">
+                            <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-1">Inversión</p>
+                            <p class="text-md font-bold text-dark">$${p.price.toFixed(2)}</p>
+                        </div>
+                        <button onclick="openModal(${p.id})" class="mt-6 w-full py-3 text-[9px] uppercase tracking-[0.3em] border border-dark hover:bg-black hover:text-white transition-all duration-300">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        function filterItems(cat) {
+            if (cat === 'all') renderProducts(products);
+            else renderProducts(products.filter(p => p.category === cat || p.category === 'unisex'));
+        }
+
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            const modal = document.getElementById('purchase-modal');
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="flex justify-center mb-6">
+                    <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white serif text-xs">SZ</div>
+                </div>
+                <h3 class="serif text-xl md:text-2xl text-center mb-8 uppercase tracking-widest">${product.name}</h3>
+                <div class="flex flex-col items-center mb-8">
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Inversión</span>
+                    <span class="text-2xl font-bold text-dark">$${product.price.toFixed(2)}</span>
+                </div>
+                <p class="text-[11px] text-gray-400 text-center leading-loose mb-8 italic">
+                    ¿Te gustaría consultar por disponibilidad o métodos de pago personalizados? Escríbenos y te asesoramos personalmente.
+                </p>
+                <button onclick="sendWhatsApp('${product.name}', ${product.price})" class="w-full bg-black text-white py-4 text-[10px] uppercase tracking-[0.4em] font-bold hover:tracking-[0.5em] transition-all">
+                    Consultar por WhatsApp
+                </button>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('purchase-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function sendWhatsApp(name, price) {
+            const text = `Hola Sorezza \nMe gustaría consultar la disponibilidad y métodos de pago para: ${name} \n\nPrecio: $${price}\n\n¿Podrían indicarme las opciones disponibles?`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/584123650896?text=${encodedText}`);
+        }
+
+        renderProducts(products);
+    </script>
+</body>
+
+</html>
