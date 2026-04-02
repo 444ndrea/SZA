@@ -11,7 +11,7 @@
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="640">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -21,7 +21,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #FDFDFD;
             color: var(--sorezza-dark);
         }
@@ -101,6 +101,11 @@
 </head>
 
 <body>
+
+    <!-- Top Bar BCV -->
+    <div class="bg-[#1A1A1A] text-gray-300 text-[9px] md:text-[10px] text-center py-2 px-4 tracking-widest uppercase">
+        Precios expresados en Euros (€). Conversión a Bs. calculada según la tasa oficial vigente del Banco Central de Venezuela.
+    </div>
 
     <!-- Header / Navbar -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
@@ -220,32 +225,32 @@
 
     <script>
         const products = [
-            { id: 1, name: "808 Sexy Men New York", img: "808 SEXY MEN NEW YORK.png", price: 45.00, category: "caballero", tag: "Nuevo" },
-            { id: 2, name: "Ajwad Pink To Pink", img: "AJWAD PINK TO PINK LATTAFA.png", price: 38.50, category: "unisex", tag: "" },
-            { id: 3, name: "Armaf Odyssey Aoud", img: "ARMAF ODYSSEY AOUD.png", price: 42.00, category: "caballero", tag: "" },
-            { id: 4, name: "Asad Bourbon", img: "ASAD BOURBON LATTAFA.png", price: 50.00, category: "caballero", tag: "Premium" },
-            { id: 5, name: "Asad Lattafa", img: "ASAD LATAFFA.png", price: 48.00, category: "caballero", tag: "Best Seller" },
+            { id: 1, name: "808 Sexy Men New York", img: "808 SEXY MEN NEW YORK.png", price: 22.00, category: "caballero", tag: "Nuevo" },
+            { id: 2, name: "Ajwad Pink To Pink", img: "AJWAD PINK TO PINK LATTAFA.png", price: 30.00, category: "unisex", tag: "" },
+            { id: 3, name: "Armaf Odyssey Aoud", img: "ARMAF ODYSSEY AOUD.png", price: 50.00, category: "caballero", tag: "" },
+            { id: 4, name: "Asad Bourbon", img: "ASAD BOURBON LATTAFA.png", price: 45.00, category: "caballero", tag: "Premium" },
+            { id: 5, name: "Asad Lattafa", img: "ASAD LATAFFA.png", price: 45.00, category: "caballero", tag: "Best Seller" },
             { id: 6, name: "Al A' Raaf Rooh", img: "Al A’ RAAF ROOH.png", price: 25.00, category: "dama", tag: "" },
-            { id: 7, name: "Badee Al Oud Amethyst", img: "BADEE AL OUD AMETHYST.png", price: 52.00, category: "unisex", tag: "" },
-            { id: 8, name: "Bakhoor Layali", img: "BAKHOOR LAYALI CONCENTRATE.png", price: 22.00, category: "unisex", tag: "" },
-            { id: 9, name: "Club De Nuit Intense Men", img: "CLUB DE NUIT INTENSE MEN ARMAF.png", price: 35.00, category: "caballero", tag: "" },
+            { id: 7, name: "Badee Al Oud Amethyst", img: "BADEE AL OUD AMETHYST.png", price: 40.00, category: "unisex", tag: "" },
+            { id: 8, name: "Bakhoor Layali", img: "BAKHOOR LAYALI CONCENTRATE.png", price: 20.00, category: "unisex", tag: "" },
+            { id: 9, name: "Club De Nuit Intense Men", img: "CLUB DE NUIT INTENSE MEN ARMAF.png", price: 50.00, category: "caballero", tag: "" },
             { id: 10, name: "Diva Blanc Swiss", img: "Diva Blanc Swiss.png", price: 20.00, category: "dama", tag: "" },
-            { id: 11, name: "Diva Red Swiss", img: "Diva Red Swiss.png", price: 21.00, category: "dama", tag: "" },
-            { id: 12, name: "Eclaire", img: "ECLAIRE.png", price: 44.50, category: "dama", tag: "Popular" },
-            { id: 13, name: "Good Sky Girl", img: "Good Sky Girl.png", price: 28.00, category: "dama", tag: "" },
-            { id: 14, name: "Khamrah Qahwa", img: "KHAMRAH QAHWA LATTAFA.png", price: 55.00, category: "unisex", tag: "Exclusivo" },
-            { id: 15, name: "Mayar Natural", img: "LATTAFA MAYAR NATURAL.png", price: 34.00, category: "dama", tag: "" },
-            { id: 16, name: "Yara Moi", img: "LATTAFA YARA MOI.png", price: 39.00, category: "dama", tag: "" },
-            { id: 17, name: "Mayar Cherry Intense", img: "MAYAR CHERRY INTENSE LATTAFA.png", price: 41.00, category: "dama", tag: "" },
-            { id: 18, name: "Secret Of Arabia Heaven", img: "SECRET OF ARABIA HEAVEN.png", price: 30.00, category: "dama", tag: "" },
-            { id: 19, name: "Secret Of Arabia Violet", img: "SECRET OF ARABIA VIOLET.png", price: 31.00, category: "dama", tag: "" },
-            { id: 20, name: "Verato Sport", img: "Verato Sport.png", price: 24.00, category: "caballero", tag: "" },
-            { id: 21, name: "Verato White Musk", img: "Verato White Musk.png", price: 26.00, category: "dama", tag: "" },
-            { id: 22, name: "Yara Elixir", img: "YARA ELIXIR.png", price: 51.00, category: "dama", tag: "" },
-            { id: 23, name: "Yara Lattafa", img: "YARA LATTAFA.png", price: 37.50, category: "dama", tag: "Popular" },
-            { id: 24, name: "Yara Tous", img: "YARA TOUS.png", price: 40.00, category: "dama", tag: "" },
-            { id: 25, name: "You Are My Fire Rouge", img: "YOU ARE MY FIRE ROUGE.png", price: 49.00, category: "unisex", tag: "" },
-            { id: 26, name: "Zuhur Hamrah", img: "ZUHUR HAMRAH.png", price: 27.50, category: "dama", tag: "" }
+            { id: 11, name: "Diva Red Swiss", img: "Diva Red Swiss.png", price: 20.00, category: "dama", tag: "" },
+            { id: 12, name: "Eclaire", img: "ECLAIRE.png", price: 55.00, category: "dama", tag: "Popular" },
+            { id: 13, name: "Good Sky Girl", img: "Good Sky Girl.png", price: 25.00, category: "dama", tag: "" },
+            { id: 14, name: "Khamrah Qahwa", img: "KHAMRAH QAHWA LATTAFA.png", price: 50.00, category: "unisex", tag: "Exclusivo" },
+            { id: 15, name: "Mayar Natural", img: "LATTAFA MAYAR NATURAL.png", price: 35.00, category: "dama", tag: "" },
+            { id: 16, name: "Yara Moi", img: "LATTAFA YARA MOI.png", price: 45.00, category: "dama", tag: "" },
+            { id: 17, name: "Mayar Cherry Intense", img: "MAYAR CHERRY INTENSE LATTAFA.png", price: 45.00, category: "dama", tag: "" },
+            { id: 18, name: "Secret Of Arabia Heaven", img: "SECRET OF ARABIA HEAVEN.png", price: 25.00, category: "dama", tag: "" },
+            { id: 19, name: "Secret Of Arabia Violet", img: "SECRET OF ARABIA VIOLET.png", price: 25.00, category: "dama", tag: "" },
+            { id: 20, name: "Verato Sport", img: "Verato Sport.png", price: 20.00, category: "caballero", tag: "" },
+            { id: 21, name: "Verato White Musk", img: "Verato White Musk.png", price: 25.00, category: "dama", tag: "" },
+            { id: 22, name: "Yara Elixir", img: "YARA ELIXIR.png", price: 55.00, category: "dama", tag: "" },
+            { id: 23, name: "Yara Lattafa", img: "YARA LATTAFA.png", price: 45.00, category: "dama", tag: "Popular" },
+            { id: 24, name: "Yara Tous", img: "YARA TOUS.png", price: 45.00, category: "dama", tag: "" },
+            { id: 25, name: "You Are My Fire Rouge", img: "YOU ARE MY FIRE ROUGE.png", price: 25.00, category: "unisex", tag: "" },
+            { id: 26, name: "Zuhur Hamrah", img: "ZUHUR HAMRAH.png", price: 25.00, category: "dama", tag: "" }
         ];
 
         function renderProducts(items) {
@@ -262,7 +267,7 @@
                         <h4 class="serif text-lg mb-2 tracking-tight">${p.name}</h4>
                         <div class="flex flex-col border-t border-gray-50 pt-4 mt-auto">
                             <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-1">Inversión</p>
-                            <p class="text-md font-bold text-dark">$${p.price.toFixed(2)}</p>
+                            <p class="text-md font-bold text-dark tracking-tight">€${p.price.toFixed(2)}</p>
                         </div>
                         <button onclick="openModal(${p.id})" class="mt-6 w-full py-3 text-[9px] uppercase tracking-[0.3em] border border-dark hover:bg-black hover:text-white transition-all duration-300">
                             Consultar Disponibilidad
@@ -289,7 +294,10 @@
                 <h3 class="serif text-xl md:text-2xl text-center mb-8 uppercase tracking-widest">${product.name}</h3>
                 <div class="flex flex-col items-center mb-8">
                     <span class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Inversión</span>
-                    <span class="text-2xl font-bold text-dark">$${product.price.toFixed(2)}</span>
+                    <span class="text-2xl font-bold text-dark tracking-tight">€${product.price.toFixed(2)}</span>
+                    <span class="text-[10px] text-gray-500 mt-4 text-center px-4 leading-relaxed">
+                        Consulta nuestros beneficios exclusivos y descuentos especiales para pagos directos en divisas.
+                    </span>
                 </div>
                 <p class="text-[11px] text-gray-400 text-center leading-loose mb-8 italic">
                     ¿Te gustaría consultar por disponibilidad o métodos de pago personalizados? Escríbenos y te asesoramos personalmente.
@@ -310,7 +318,7 @@
         }
 
         function sendWhatsApp(name, price) {
-            const text = `Hola Sorezza \nMe gustaría consultar la disponibilidad y métodos de pago para: ${name} \n\nPrecio: $${price}\n\n¿Podrían indicarme las opciones disponibles?`;
+            const text = `Hola Sorezza \nMe gustaría consultar la disponibilidad y métodos de pago para: ${name} \n\nPrecio: €${price.toFixed(2)}\n\n¿Podrían indicarme las opciones disponibles?`;
             const encodedText = encodeURIComponent(text);
             window.open(`https://wa.me/584123650896?text=${encodedText}`);
         }
