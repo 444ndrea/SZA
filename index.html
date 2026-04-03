@@ -347,6 +347,49 @@
                         <span class="text-[8px] tracking-[0.2em] uppercase font-semibold text-gray-500 group-hover:text-[#0a2240] transition-colors">¡Te lo llevas ahora y pagas luego!</span>
                     </button>
                 </div>
+
+                <!-- Pago Movil Section -->
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <button onclick="togglePagoMovil()" class="w-full bg-[#E5E4E2]/20 text-[#0a2240] py-3 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-[#E5E4E2]/40 transition-all border border-[#0a2240]/20 flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        Pagar con Pago Móvil
+                    </button>
+                    
+                    <div id="pago-movil-details" class="hidden mt-4 bg-gray-50 border border-gray-100 rounded p-4 relative shadow-inner">
+                        <p class="text-[9px] uppercase tracking-widest text-center text-[#0a2240] font-bold mb-3">Datos de Transferencia</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between items-center bg-white p-2 border border-gray-100 rounded">
+                                <span class="text-[9px] text-gray-500 font-medium tracking-widest">BANCO</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[11px] font-bold text-dark" id="pm-banco">Banco Nacional de Crédito (0191)</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-white p-2 border border-gray-100 rounded">
+                                <span class="text-[9px] text-gray-500 font-medium tracking-widest">TELÉFONO</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[11px] font-bold text-dark" id="pm-telefono">04127078627</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-white p-2 border border-gray-100 rounded">
+                                <span class="text-[9px] text-gray-500 font-medium tracking-widest">CÉDULA/RIF</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[11px] font-bold text-dark" id="pm-ci">V-30589661</spam>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="copyAllDatos(this)" class="w-full bg-white text-[#0a2240] py-3 text-[10px] uppercase tracking-[0.1em] font-bold hover:bg-gray-50 transition-all rounded shadow-sm border border-gray-200 flex items-center justify-center gap-2 mb-2">
+                            <svg class="w-4 h-4 text-[#00E5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            Copiar Todos los Datos
+                        </button>
+                        
+                        <button onclick="sendWhatsAppPayment('${product.name}', ${product.price})" class="w-full bg-[#25D366] text-white py-3 text-[10px] uppercase tracking-[0.1em] font-bold hover:bg-[#128C7E] transition-all rounded shadow-md flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.125.552 4.184 1.597 6.002L.044 24l6.115-1.604A11.96 11.96 0 0012.031 24c6.647 0 12.031-5.385 12.031-12.031S18.678 0 12.031 0zm3.87 17.51c-.173.486-.993.931-1.464.975-.436.04-.972.13-2.738-.6-2.115-.875-3.485-3.04-3.585-3.175-.1-.135-.856-1.14-.856-2.176 0-1.036.536-1.545.727-1.743.19-.198.411-.248.546-.248.136 0 .272 0 .393.006.126.006.294-.047.45.334.164.402.56 1.365.611 1.465.05.101.084.218.017.353-.067.134-.1.218-.2.318-.1.1-.212.227-.3.303-.1.085-.205.18-.09.38.114.2.51.84 1.087 1.353.746.662 1.36 863 1.564.964.205.101.324.084.444-.05.12-.134.52-.605.66-.814.135-.209.273-.175.457-.105.185.07 1.17.552 1.37.652.201.101.335.151.385.235.05.084.05.485-.123.971z"/></svg>
+                            Ya Pagué, Enviar Capture
+                        </button>
+                    </div>
+                </div>
             `;
 
             modal.classList.remove('hidden');
@@ -357,6 +400,40 @@
             const modal = document.getElementById('purchase-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+        }
+
+        function togglePagoMovil() {
+            const details = document.getElementById('pago-movil-details');
+            if (details) {
+                details.classList.toggle('hidden');
+            }
+        }
+
+        function copyAllDatos(btn) {
+            const banco = document.getElementById('pm-banco').innerText;
+            const telefono = document.getElementById('pm-telefono').innerText;
+            const ci = document.getElementById('pm-ci').innerText;
+
+            const textToCopy = `Banco: ${banco}\nTeléfono: ${telefono}\nCédula/RIF: ${ci}`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> ¡Datos Copiados!`;
+                btn.classList.add('bg-green-50', 'border-green-200', 'text-green-700');
+                btn.classList.remove('text-[#0a2240]');
+
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('bg-green-50', 'border-green-200', 'text-green-700');
+                    btn.classList.add('text-[#0a2240]');
+                }, 2000);
+            });
+        }
+
+        function sendWhatsAppPayment(name, price) {
+            const text = `Hola, \nAcabo de realizar un pago por el perfume: ${name} (Referencia: €${price.toFixed(2)}). \n\nAdjunto a este mensaje mi capture de pantalla del Pago Móvil.`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/584123650896?text=${encodedText}`);
         }
 
         function sendWhatsApp(name, price, type) {
